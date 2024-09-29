@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลสมาชิก</title>
+</head>
+<body>
+    <div id="memberInfo"></div>
+
+    <script>
+        // สมมติว่ามีฟังก์ชันเพื่อดึงข้อมูลสมาชิกตาม ID
+        function fetchMemberDetails(memberId) {
+            db.collection("members").doc(memberId).get().then((doc) => {
+                if (doc.exists) {
+                    const data = doc.data();
+                    document.getElementById('memberInfo').innerHTML = `
+                        <h1>${data.name}</h1>
+                        <img src="${data.image}" alt="${data.name}">
+                        <h2>ชื่อเล่น: ${data.nickname}</h2>
+                        <h2>เลขประจำตัว: ${data.idNumber}</h2>
+                        <h2>ช่องทางการติดต่อ: ${data.contact}</h2>
+                        <h2>คำคม: "${data.quote}"</h2>
+                        <h2>ผลงานที่เคยทำ: ${data.projects}</h2>
+                    `;
+                } else {
+                    console.log("ไม่พบข้อมูลสมาชิก");
+                }
+            }).catch((error) => {
+                console.error("เกิดข้อผิดพลาดในการดึงข้อมูลสมาชิก: ", error);
+            });
+        }
+
+        // สมมติว่าได้ ID ของสมาชิกจาก URL
+        const memberId = new URLSearchParams(window.location.search).get('id');
+        fetchMemberDetails(memberId);
+    </script>
+</body>
+</html>

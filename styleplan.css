@@ -1,0 +1,41 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Sarabun', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1a1a2e;
+    color: #ffffff;
+}
+.container {
+    max-width: 1000px;
+    margin: 20px;
+}
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.grid-item {
+    background-color: #162447;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer; /* เปลี่ยนเป็นมือเมื่อ hover ที่รูป */
+}
+.grid-item h3 {
+    margin-top: 15px;
+    font-size: 1.2em;
+    }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เพิ่มสมาชิก</title>
+</head>
+<body>
+    <h1>เพิ่มสมาชิก</h1>
+    <form id="addMemberForm">
+        <input type="text" id="memberName" placeholder="ชื่อ" required>
+        <input type="text" id="memberImage" placeholder="URL รูปภาพ" required>
+        <input type="text" id="memberLink" placeholder="ลิงก์ไปยังโปรไฟล์" required>
+        <input type="text" id="nickname" placeholder="ชื่อเล่น">
+        <input type="text" id="idNumber" placeholder="เลขประจำตัว">
+        <input type="text" id="contact" placeholder="ช่องทางการติดต่อ">
+        <input type="text" id="quote" placeholder="คำคม">
+        <input type="text" id="projects" placeholder="ผลงานที่เคยทำ">
+        <button type="submit">เพิ่มสมาชิก</button>
+    </form>
+
+    <script>
+        document.getElementById('addMemberForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // หยุดการรีเฟรชหน้า
+
+            const name = document.getElementById('memberName').value;
+            const image = document.getElementById('memberImage').value;
+            const link = document.getElementById('memberLink').value;
+            const nickname = document.getElementById('nickname').value;
+            const idNumber = document.getElementById('idNumber').value;
+            const contact = document.getElementById('contact').value;
+            const quote = document.getElementById('quote').value;
+            const projects = document.getElementById('projects').value;
+
+            if (name && image && link) {
+                // เพิ่มข้อมูลสมาชิกใหม่ใน Firestore
+                db.collection("members").add({
+                    name: name,
+                    image: image,
+                    link: link,
+                    nickname: nickname,
+                    idNumber: idNumber,
+                    contact: contact,
+                    quote: quote,
+                    projects: projects
+                })
+                .then(() => {
+                    console.log("สมาชิกใหม่ถูกเพิ่มเรียบร้อยแล้ว");
+                    window.location.href = 'batch1.html'; // กลับไปยังหน้าสมาชิก
+                })
+                .catch((error) => {
+                    console.error("เกิดข้อผิดพลาดในการเพิ่มสมาชิก: ", error);
+                });
+            } else {
+                alert("กรุณากรอกข้อมูลทั้งหมด");
+            }
+        });
+    </script>
+</body>
+</html>

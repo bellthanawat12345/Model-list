@@ -1,0 +1,87 @@
+/* กำหนดพื้นฐานของ body และ html */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative; /* ให้ position relative สำหรับการจัดตำแหน่ง */
+    overflow: hidden; /* ปิดการเลื่อนเพื่อให้วิดีโอเต็มหน้าจอ */
+    transition: opacity 0.5s ease; /* ทำให้การเปลี่ยนแปลงนุ่มนวล */
+}
+
+/* ซ่อนหน้าจอเมื่อเปลี่ยน */
+.fade-out {
+    opacity: 0; /* ซ่อนหน้าจอ */
+}
+
+/* การจัดการวิดีโอพื้นหลัง */
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* วิดีโออยู่ด้านหลัง */
+    transform: translate(-50%, -50%); /* จัดวิดีโอให้อยู่ตรงกลาง */
+}
+
+/* การจัดกล่องเนื้อหา */
+.container {
+    position: absolute;
+    top: 50%;
+    left: 20px; /* เลื่อนตัวหนังสือไปทางซ้าย */
+    transform: translateY(-50%); /* จัดให้ตรงกลางในแนวตั้ง */
+    color: white;
+    text-align: left; /* จัดตัวหนังสือให้ชิดซ้าย */
+}
+
+/* การจัดโลโก้ */
+.logo-container {
+    display: flex; /* ใช้ flexbox เพื่อจัดตำแหน่งโลโก้และข้อความ */
+    align-items: center; /* จัดแนวในแนวตั้ง */
+    margin-left: 20px; /* ระยะห่างด้านซ้ายของโลโก้ */
+}
+
+.logo {
+    width: 100px; /* ปรับขนาดโลโก้ */
+    margin-right: 20px; /* ระยะห่างระหว่างโลโก้กับข้อความ */
+    border-radius: 50%; /* ทำให้โลโก้เป็นรูปกลม */
+    object-fit: cover; /* ทำให้ภาพไม่เสียสัดส่วน */
+}
+
+/* การจัดสไตล์ข้อความ */
+h1 {
+    font-size: 4em; /* ปรับขนาดข้อความ */
+    margin: 0; /* กำจัดระยะห่างเดิม */
+    color: gold;
+    line-height: 1.2; /* ระยะห่างระหว่างบรรทัด */
+}
+
+h2 {
+    font-size: 2em; /* ปรับขนาดข้อความ */
+    margin-bottom: 30px;
+    color: gold; /* ทำให้ข้อความรองเป็นสีทอง */
+}
+
+/* การจัดปุ่ม */
+.button-container {
+    margin-top: 30px;
+}
+
+.button-container button {
+    padding: 20px 40px; /* ปรับขนาดปุ่ม */
+    font-size: 20px; /* ปรับขนาดฟอนต์ปุ่ม */
+    cursor: pointer;
+    background-color: gold; /* สีพื้นหลังของปุ่ม */
+    color: white;
+    border: none;
+    border-radius: 25px; /* ทำให้ปุ่มโค้งกลม */
+    transition: background-color 0.3s;
+    margin-left: 100px; /* ขยับปุ่มไปทางขวานิดหนึ่ง */
+    display: inline-block; /* ให้ปุ่มแสดงในแถวเดียวกัน */
+}
+
+.button-container button:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* เปลี่ยนสีเมื่อ hover */
+}

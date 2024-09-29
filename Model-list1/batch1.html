@@ -1,0 +1,175 @@
+    <!DOCTYPE html>
+    <html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>สมาชิกรุ่น - โรงเรียนชุมแพศึกษา</title>
+        <link rel="stylesheet" href="stylebatch.css">
+        <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js"></script>
+        <script src="firebase-config.js"></script> <!-- นำเข้าไฟล์ config -->
+    </head>
+    <body>
+        <div class="container">
+            <h1>สมาชิก คณะอาจารย์ และ นักเรียน รุ่น 1</h1>
+            <div class="grid" id="memberGrid">
+                <!-- ข้อมูลสมาชิกจะอยู่ที่นี่ -->
+                <div class="grid-item" style="grid-column: span 2;"> <!-- สมาชิก 1 -->
+                    <a href="#"><img src="images/t1.jpg" alt="รูปสมาชิก 1"></a>
+                    <h3>ดร. กาญจนา จรัญศิริไพศาล</h3>
+                </div>
+                <div class="grid-item" style="grid-column: span 2;"> <!-- สมาชิก 2 -->
+                    <a href="#"><img src="images/t2.jng" alt="รูปสมาชิก 2"></a>
+                    <h3>นาง ศิริลักษณ์ แสงชาตรี</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student1.html"><img src="images/s1.jpg" alt="รูปสมาชิก 3"></a>
+                    <h3>นาย จักรกฤษณ์ แสนตา </h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student2.html"><img src="images/s2.jpg" alt="รูปสมาชิก 4"></a>
+                    <h3>น.ส. พรพิมล เอกพันธุ์</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student3.html"><img src="images/s3.jpg" alt="รูปสมาชิก 5"></a>
+                    <h3>นาย สุเมธ แซ่ยี่</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student4.html"><img src="images/s4.jpg" alt="รูปสมาชิก 6"></a>
+                    <h3>นาย พชร รักเหล่า</h3>                      
+                </div>
+                <div class="grid-item">
+                    <a href="student5.html"><img src="images/s5.jpg" alt="รูปสมาชิก 7"></a>
+                    <h3>นาย ธนากร นนธิบุตร</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student6.html"><img src="images/s6.jpg" alt="รูปสมาชิก 8"></a>
+                    <h3>นาย ธีระวัฒน์ ยศจำรัส</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student7.html"><img src="images/s7.jpg" alt="รูปสมาชิก 9"></a>
+                    <h3>นาย รพีภัทร พุ่งอุไร</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student8.html"><img src="images/s8.jpg" alt="รูปสมาชิก 10"></a>
+                    <h3>นาย อรรนพ ตรีศาสตร์</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student9.html"><img src="images/s9.jpg" alt="รูปสมาชิก 11"></a>
+                    <h3>นาย ธนวัฒน์ ฉัตรวัฒน์</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student10.html"><img src="images/s10.jpg" alt="รูปสมาชิก 12"></a>
+                    <h3>นาย อธิชาติ หล้าชน</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student11.html"><img src="images/s11.jpg" alt="รูปสมาชิก 13"></a>
+                    <h3>นาย รัฐภูมิ สวรรค์ล้ำ</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student12.html"><img src="images/s12.jpg" alt="รูปสมาชิก 14"></a>
+                    <h3>นาย กวินท์พัฒน์ ศิริธนชัย</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student13.html"><img src="images/s13.jpg" alt="รูปสมาชิก 15"></a>
+                    <h3>นาย ธรรมพล บุริมาศ</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student14.html"><img src="images/s14.jpg" alt="รูปสมาชิก 16"></a>
+                    <h3>นาย รวิดนัย เทศเอี่ยม</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student15.html"><img src="images/s15.jpg" alt="รูปสมาชิก 17"></a>
+                    <h3>น.ส. เกวลิน มือดี</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student16.html"><img src="images/s16.jpg" alt="รูปสมาชิก 18"></a>
+                    <h3> น.ส. นิภาพร ศรีรักษาพล</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student17.html"><img src="images/s17.jpg" alt="รูปสมาชิก 19"></a>
+                    <h3>นาย ธนภัทร แนววิลัย</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student18.html"><img src="images/s18.jpg" alt="รูปสมาชิก 20"></a>
+                    <h3>นาย พัสกร นามโนนเขวา</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student19.html"><img src="images/s19.jpg" alt="รูปสมาชิก 21"></a>
+                    <h3>น.ส. วิลาวัณย์ รอยสี</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student20.html"><img src="images/s20.jpg" alt="รูปสมาชิก 22"></a>
+                    <h3>นาย ฐากฤชนน บุญประกอบ</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student21.html"><img src="images/s21.jpg" alt="รูปสมาชิก 23"></a>
+                    <h3>นาย กิจไพบูลย์ ศรีหามาตร</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student22.html"><img src="images/s22.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>นาย คเณศ ชูแสงทอง</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student23.html"><img src="images/s23.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>นาย คุณานนท์ ถาเอ็นยวน</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student24.html"><img src="images/s24.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>นาย สิทธิโชค เจริญสุวรรณคีรี</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student25.html"><img src="images/s25.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>น.ส. ปวริศา ชาญเดช</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student26.html"><img src="images/s26.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>นาย ชัยยุทธ พนมเขต</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student27.html"><img src="images/s27.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>นาย ธราเทพ อนันตภักดิ์</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student28.html"><img src="images/s0.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>นาย ทรรศนกร ทองแย้ม</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student29.html"><img src="images/s29.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>น.ส. พัชรินทร์ ใจอดทน</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student30.html"><img src="images/s30.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>น.ส. พัชรียา นรายศร</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student31.html"><img src="images/s31.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>นาย อธิป จันทร์ทอง</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student32.html"><img src="images/s32.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>น.ส. อินทิรา มุกดาปกรณ์</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student33.html"><img src="images/s33.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>น.ส. ปาลิตา ต่อชาติ</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student34.html"><img src="images/s34.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>น.ส.ณัฐนิชา มะนาวนอก</h3>
+                </div>
+                <div class="grid-item">
+                    <a href="student35.html"><img src="images/s35.jpg" alt="รูปสมาชิก 24"></a>
+                    <h3>น.ส. ภคพร เอกวงษ์</h3>
+                </div>
+            </div>
+            
+
+            <div class="navigation">
+                <button class="nav-button" id="prevBtn">กลับ</button>
+                <button class="nav-button" id="nextBtn">ถัดไป</button>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+    </html>
