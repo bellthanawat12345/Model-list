@@ -1,19 +1,16 @@
-/* กำหนดพื้นฐานของ body และ html */
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    position: relative; /* ให้ position relative สำหรับการจัดตำแหน่ง */
-    overflow: hidden; /* ปิดการเลื่อนเพื่อให้วิดีโอเต็มหน้าจอ */
-    transition: opacity 0.5s ease; /* ทำให้การเปลี่ยนแปลงนุ่มนวล */
+.navbar-brand {
+    display: flex; /* ใช้ Flexbox เพื่อจัดเรียงโลโก้และข้อความ */
+    align-items: center; /* จัดแนวโลโก้และข้อความให้อยู่กลาง */
 }
 
-/* ซ่อนหน้าจอเมื่อเปลี่ยน */
-.fade-out {
-    opacity: 0; /* ซ่อนหน้าจอ */
+.navbar-brand img {
+    margin-right: 10px; /* ระยะห่างระหว่างโลโก้และข้อความ */
+    width: 50px; /* ขนาดโลโก้ */
+    height: 50px; /* ขนาดโลโก้ */
+    border-radius: 25px;
 }
 
-/* การจัดการวิดีโอพื้นหลัง */
+/* การจัดวิดีโอพื้นหลัง */
 video {
     position: absolute;
     top: 50%;
@@ -22,66 +19,103 @@ video {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -1; /* วิดีโออยู่ด้านหลัง */
-    transform: translate(-50%, -50%); /* จัดวิดีโอให้อยู่ตรงกลาง */
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.7);
 }
 
-/* การจัดกล่องเนื้อหา */
+/* การจัดเนื้อหาให้อยู่ในตำแหน่งที่ถูกต้อง */
 .container {
     position: absolute;
     top: 50%;
-    left: 20px; /* เลื่อนตัวหนังสือไปทางซ้าย */
-    transform: translateY(-50%); /* จัดให้ตรงกลางในแนวตั้ง */
+    left: 20px;
+    transform: translateY(-50%);
     color: white;
-    text-align: left; /* จัดตัวหนังสือให้ชิดซ้าย */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
 }
 
 /* การจัดโลโก้ */
 .logo-container {
-    display: flex; /* ใช้ flexbox เพื่อจัดตำแหน่งโลโก้และข้อความ */
-    align-items: center; /* จัดแนวในแนวตั้ง */
-    margin-left: 20px; /* ระยะห่างด้านซ้ายของโลโก้ */
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
 }
 
 .logo {
-    width: 100px; /* ปรับขนาดโลโก้ */
-    margin-right: 20px; /* ระยะห่างระหว่างโลโก้กับข้อความ */
-    border-radius: 50%; /* ทำให้โลโก้เป็นรูปกลม */
-    object-fit: cover; /* ทำให้ภาพไม่เสียสัดส่วน */
+    width: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* การจัดสไตล์ข้อความ */
 h1 {
-    font-size: 4em; /* ปรับขนาดข้อความ */
-    margin: 0; /* กำจัดระยะห่างเดิม */
+    font-size: 4em;
+    margin: 0;
     color: gold;
-    line-height: 1.2; /* ระยะห่างระหว่างบรรทัด */
+    line-height: 1.2;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 h2 {
-    font-size: 2em; /* ปรับขนาดข้อความ */
+    font-size: 2em;
     margin-bottom: 30px;
-    color: gold; /* ทำให้ข้อความรองเป็นสีทอง */
+    color: gold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 /* การจัดปุ่ม */
 .button-container {
-    margin-top: 30px;
+    margin-top: 20px; /* ระยะห่างจากข้อความด้านบน */
+    display: flex; /* ใช้ Flexbox สำหรับการจัดเรียง */
+    justify-content: flex-end; /* จัดปุ่มให้อยู่ทางขวา */
 }
 
 .button-container button {
-    padding: 20px 40px; /* ปรับขนาดปุ่ม */
-    font-size: 20px; /* ปรับขนาดฟอนต์ปุ่ม */
-    cursor: pointer;
-    background-color: gold; /* สีพื้นหลังของปุ่ม */
-    color: white;
-    border: none;
-    border-radius: 25px; /* ทำให้ปุ่มโค้งกลม */
-    transition: background-color 0.3s;
-    margin-left: 100px; /* ขยับปุ่มไปทางขวานิดหนึ่ง */
-    display: inline-block; /* ให้ปุ่มแสดงในแถวเดียวกัน */
+    padding: 20px 40px; /* ขนาดปุ่ม */
+    font-size: 50px; /* ขนาดฟอนต์ */
+    cursor: pointer; /* แสดงตัวชี้ */
+    background-color: gold; /* สีพื้นหลัง */
+    color: white; /* สีข้อความ */
+    border: none; /* ไม่มีกรอบ */
+    border-radius: 25px; /* ทำให้ปุ่มโค้ง */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* เอฟเฟกต์การเปลี่ยนสี */
+    margin-left: 100px; /* ระยะห่างจากปุ่ม */
+    display: inline-block; /* แสดงปุ่มในแถวเดียวกัน */
 }
 
+
 .button-container button:hover {
-    background-color: rgba(255, 255, 255, 0.5); /* เปลี่ยนสีเมื่อ hover */
+    background-color: rgba(255, 255, 255, 0.7);
+    transform: scale(1.1);
+}
+
+/* การปรับสำหรับหน้าจอขนาดเล็ก (Responsive Design) */
+@media (max-width: 768px) {
+    .container {
+        top: 40%;
+        left: 10px;
+        transform: translateY(-40%);
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .button-container button {
+        margin-left: 0;
+        width: 100%;
+    }
 }

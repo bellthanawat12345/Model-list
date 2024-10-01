@@ -10,20 +10,20 @@ function navigateTo(url) {
 let membersPerPage; // จำนวนสมาชิกที่จะแสดงในแต่ละหน้า
 let currentPage = 0; // หน้าเริ่มต้น
 const gridItems = document.querySelectorAll('.grid-item');
-const totalPages = Math.ceil((gridItems.length - 10) / 12) + 1; // คำนวณหน้าทั้งหมด
+const totalPages = Math.ceil((gridItems.length - 6) / 4) + 1; // คำนวณหน้าทั้งหมด
 
 // ฟังก์ชันสำหรับอัปเดตการแสดงสมาชิก
 function updateGrid() {
     if (currentPage === 0) {
-        membersPerPage = 10; // หน้าแรกแสดง 10 คน
+        membersPerPage = 6; // หน้าแรกแสดง 6 คน
     } else {
-        membersPerPage = 12; // หน้าถัดไปแสดง 12 คน
+        membersPerPage = 8; // หน้าถัดไปแสดง 8 คน
     }
 
-    gridItems.forEach((item, index) => {
-        const startIndex = currentPage === 0 ? 0 : 10 + (currentPage - 1) * 12;
-        const endIndex = startIndex + membersPerPage;
+    const startIndex = currentPage === 0 ? 0 : 6 + (currentPage - 1) * 8;
+    const endIndex = startIndex + membersPerPage;
 
+    gridItems.forEach((item, index) => {
         item.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
     });
 

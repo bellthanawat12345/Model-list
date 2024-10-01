@@ -4,28 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ทำเนียบห้องปัญญาประดิษฐ์ - โรงเรียนชุมแพศึกษา</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styleindex.css">
+    <link rel="stylesheet" href="stylenavber.css ">
 </head>
 <body>
+    <div id="navbar-placeholder"></div>
+    <script>
+        // โหลด navbar จากไฟล์ navbar.html
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+    </script>
+
     <video autoplay muted loop>
-        <source src="videos/Video.mp4" type="video/mp4"> <!-- ใช้พาธวิดีโอ -->
+        <source src="videos/Video.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <!-- โลโก้และข้อความ -->
-    <div class="logo-container">
-        <img src="Model-list1/images/logo.jpg" alt="โลโก้" class="logo"> <!-- เปลี่ยน path ตามโลโก้ของคุณ -->
-        <h2>ทำเนียบรุ่นแผนการเรียนปัญญาประดิษฐ์</h2>
-    </div>
-    
     <div class="container">
         <h1>ทำเนียบรุ่น</h1>
         <h1>แผนการเรียน</h1>
         <h1>ปัญญาประดิษฐ์</h1>
         <div class="button-container">
-            <button onclick="navigateTo('plan.html')">เข้าสู่ทำเนียบ</button>
+            <a href="plan.html" class="btn btn-success btn-lg">เข้าสู่ทำเนียบ</a>
         </div>
     </div>
-    <script src="Model-list1/script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

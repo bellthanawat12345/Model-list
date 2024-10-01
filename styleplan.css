@@ -1,41 +1,102 @@
 body, html {
-    height: 100%;
+    height: 100%; /* ให้สูงเต็มที่ */
     margin: 0;
     font-family: 'Sarabun', sans-serif;
+    color: #ffffff; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-color: rgba(9, 9, 92, 0.705);
+    padding-top: 70px; /* เพิ่มพื้นที่ด้านบนเพื่อไม่ให้ซ้อนทับกับ navbar */
+}
+body::before {
+    content: "";
+    position: fixed; /* ให้เป็น fixed เพื่อให้เต็มจอ */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('Model-list1/images/bg.png'); /* เปลี่ยนเป็นภาพพื้นหลังของคุณ */
+    background-size: cover; /* ปรับขนาดให้พอดีกับหน้าจอ */
+    background-position: center; /* จัดกลางภาพ */
+    opacity: 0.5; /* ความโปร่งใส */
+    z-index: -1; /* ให้เป็นพื้นหลัง */
+}
+
+.navbar {
+    position: fixed; /* ติดอยู่ที่ด้านบน */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* ให้แน่ใจว่า navbar อยู่ด้านบนสุด */
+}
+.navbar-brand img {
+    margin-right: 10px; /* ระยะห่างระหว่างโลโก้และข้อความ */
+    width: 50px; /* ขนาดโลโก้ */
+    height: 50px; /* ขนาดโลโก้ */
+    border-radius: 25px;
+}
+.navbar-brand {
+    display: flex; /* ใช้ Flexbox เพื่อจัดเรียงโลโก้และข้อความ */
+    align-items: center; /* จัดแนวโลโก้และข้อความให้อยู่กลาง */
+    color: #FFD700;
+}
+.logo-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
-    background-color: #1a1a2e;
-    color: #ffffff;
+    margin-left: 20px;
 }
+
+
 .container {
-    max-width: 1000px;
-    margin: 20px;
+    max-width: 800px; /* กำหนดความกว้างสูงสุด */
+    margin: 20px auto; /* ทำให้เนื้อหากลางในหน้าจอ */
+    padding: 20px; /* เพิ่มพื้นที่ด้านใน */
 }
+
 h1 {
     font-size: 2.5em;
-    margin-bottom: 40px;
-    
+    margin-bottom: 20px; /* ลดระยะห่างด้านล่าง */
+    text-align: center; /* จัดให้อยู่กลาง */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px; /* ระยะห่างระหว่างหัวข้อ */
+    text-align: center; /* จัดให้อยู่กลาง */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* สามคอลัมน์ */
+    gap: 20px; /* ช่องว่างระหว่างกริด */
 }
+
 .grid-item {
-    background-color: #162447;
+    background-color: rgba(22, 36, 71, 0.9); /* มีความทึบเล็กน้อยเพื่อเน้น */
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s; /* เพิ่มการเปลี่ยนแปลงสำหรับเอฟเฟกต์เมื่อชี้ */
+    display: flex; /* ใช้ Flexbox สำหรับจัดเรียงเนื้อหาภายใน */
+    flex-direction: column; /* จัดเรียงในแนวตั้ง */
+    align-items: center; /* จัดให้อยู่กลางในแนวนอน */
 }
+
+.grid-item:hover {
+    transform: translateY(-5px); /* ยกขึ้นเมื่อชี้ */
+}
+
 .grid-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    cursor: pointer; /* เปลี่ยนเป็นมือเมื่อ hover ที่รูป */
+    width: 100%; /* ความกว้างของภาพ */
+    height: auto; /* รักษาสัดส่วน */
+    border-radius: 10px; 
 }
+
 .grid-item h3 {
     margin-top: 15px;
     font-size: 1.2em;
-    }
+    text-align: center; /* จัดให้อยู่กลาง */
+    color: #FFD700; 
+}

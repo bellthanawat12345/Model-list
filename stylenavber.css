@@ -1,0 +1,89 @@
+/* ปรับปรุงสีพื้นหลังและฟอนต์ของ navbar */
+/* .navbar {
+    background-color: #1f1f1f; /* พื้นหลังสีเข้ม */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); เพิ่มเงา} */ 
+.navbar {
+    position: fixed; /* ติดอยู่ที่ด้านบน */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* ให้แน่ใจว่า navbar อยู่ด้านบนสุด */
+    display: flex; /* ใช้ Flexbox */
+    justify-content: space-between; /* จัดให้มีระยะห่างระหว่างองค์ประกอบ */
+    padding: 10px 20px; /* เพิ่ม padding ให้ navbar */
+    background-color: #1f1f1f; /* พื้นหลังสีเข้ม */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+
+.navbar-brand img {
+    width: 50px; /* กำหนดขนาดโลโก้ */
+    height: 50px;
+    border-radius: 50%; /* ทำให้โลโก้เป็นวงกลม */
+    margin-right: 10px; /* เพิ่มระยะห่างระหว่างโลโก้และข้อความ */
+}
+
+.navbar-brand span {
+    color: #ffffff; /* สีทองสำหรับชื่อทำเนียบ */
+    font-size: 18px; /* ขนาดฟอนต์ */
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* สีขาวสำหรับลิงก์ */
+    font-size: 16px;
+    transition: color 0.3s ease; /* เพิ่มเอฟเฟกต์ transition */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700; /* เปลี่ยนสีเป็นทองเมื่อ hover */
+}
+
+.navbar-toggler-icon {
+    background-color: #FFD700; /* ปรับสี icon เมื่อหน้าจอเล็ก */
+}
+.navbar {
+    position: fixed; /* ติดอยู่ที่ด้านบน */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* ให้แน่ใจว่า navbar อยู่ด้านบนสุด */
+    display: flex; /* ใช้ Flexbox เพื่อจัดเรียงโลโก้และเมนู */
+    justify-content: space-between; /* จัดให้อยู่สุดซ้ายและขวา */
+    align-items: center; /* จัดให้แนวกลางแนวตั้ง */
+    background-color: rgba(0, 0, 0, 0.8); /* สีพื้นหลังของ navbar */
+    padding: 10px 20px; /* เพิ่ม padding รอบ ๆ navbar */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center; /* จัดแนวโลโก้และข้อความให้อยู่กลาง */
+}
+
+.navbar-brand {
+    color: #ffffff; /* สีของข้อความ */
+    margin-left: 10px; /* ระยะห่างระหว่างโลโก้และข้อความ */
+    font-size: 1.5em; /* ขนาดฟอนต์ของข้อความ */
+}
+
+.navigation {
+    margin-top: 20px; /* ระยะห่างด้านบน */
+}
+
+.nav-button {
+    background-color: #1ad61a;
+    border: none; /* ลบเส้นขอบ */
+    outline: none; /* ลบเส้นขอบเมื่อคลิก */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #ff6f61; /* เปลี่ยนสีเมื่อ hover */
+}

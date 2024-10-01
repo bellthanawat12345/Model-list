@@ -1,0 +1,32 @@
+/* ปรับปรุงสีพื้นหลังและฟอนต์ของ navbar */
+.navbar {
+    background-color: #1f1f1f; /* พื้นหลังสีเข้ม */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+}
+
+.navbar-brand img {
+    width: 50px; /* กำหนดขนาดโลโก้ */
+    height: 50px;
+    border-radius: 50%; /* ทำให้โลโก้เป็นวงกลม */
+    margin-right: 10px; /* เพิ่มระยะห่างระหว่างโลโก้และข้อความ */
+}
+
+.navbar-brand span {
+    color: #FFD700; /* สีทองสำหรับชื่อทำเนียบ */
+    font-size: 18px; /* ขนาดฟอนต์ */
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff; /* สีขาวสำหรับลิงก์ */
+    font-size: 16px;
+    transition: color 0.3s ease; /* เพิ่มเอฟเฟกต์ transition */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700; /* เปลี่ยนสีเป็นทองเมื่อ hover */
+}
+
+.navbar-toggler-icon {
+    background-color: #FFD700; /* ปรับสี icon เมื่อหน้าจอเล็ก */
+}
